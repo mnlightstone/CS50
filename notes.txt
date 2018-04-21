@@ -1,0 +1,57 @@
+/*Lecture Week 1*/
+
+when naming files, always use lowercase - no spaces
+
+IDE - integrated devloper environment 
+
+compiling means converting code into machine code
+source code -> compiler -> machine code
+
+	$clang FILE-NAME
+	clang <- clanguage
+
+when we run a compiler is output in an 'a.out' file
+
+to run code in cs50's IDE:
+	./a.out
+
+	. 		<- look in my current directory
+	/ 		<- separator 
+	a.out   <- compiled file name
+	
+to name a file in cs50's IDE:
+	clang -o hello hello.c
+	
+	clang   <- compile (clanguage)
+	-o 	  	<- stands to output
+	hello	<- file name we want
+	hello.c <- file we want to compile
+	
+	
+	
+command line commands:
+	**ls** - list all the files in this directory. 
+			/* programs are green with starts (executable)
+				text files are white 
+				folders are blue with a trailing slash */
+				
+	**mkdir** - make directory
+	**rmdir** - remove directory
+	**make**  - another way to compile a program. 'make FILENAME' 
+	
+with c you must declare what kind of variable you are creating
+
+library: a collection of functions that know how to do specific things
+	to include a library: #include <LIBRARY-NAME>
+	
+stdio.h: Input and Output operations can also be performed in C++ using the C Standard Input and Output Library (cstdio, known as stdio.h in the C language.
+	reference: http://www.cplusplus.com/reference/cstdio/
+	
+	
+floats usually use 32 bits. doubles use 64 bits
+
+single quoates are meant for single characters
+double quotes are meant for multiple characters
+
+
+https://ide.cs50.io/
