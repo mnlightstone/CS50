@@ -54,4 +54,49 @@ single quoates are meant for single characters
 double quotes are meant for multiple characters
 
 
+
+sometimes we might run into a case where a function needs to be called before it is declared (chronologically in the code). we can copy the first line of the function and paste it in the top of the code, rather than moving the entire function which could get messy in huge projects. This is called a prototype.
+
+        EXAMPLE: 
+
+        #include <cs50.h>
+        #include <stdio.h>
+
+        int square (int n) //this is the prototype.
+        int main(void)
+        {
+            int x = get_int("x: ");
+            printf("%i\n", square(x));
+        }
+
+        int square (int n) //this is where the prototype is made
+        {
+            return n *n;
+        }
+        
+        
+    
 https://ide.cs50.io/
+
+
+
+Command Line (Linux/Mac only):
+	ls: list of all files in directory
+	cp: copy. takes source (file) and destination (file)
+		$ cp hello.txt hi.txt
+		//makes copy of 'hello' and calls it 'hi'
+
+		$cp -r folder1 folder2
+		//makes copy of folder1 and calls it folder2
+
+		$ rm <file>
+		//removes file
+
+		$rm -r folder1
+		//removes folder1
+
+		$m file1 file2
+		//renames file1 to file2
+
+
+WEEK 1 CONTINUED
