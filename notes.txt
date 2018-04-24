@@ -100,3 +100,24 @@ Command Line (Linux/Mac only):
 
 
 WEEK 1 CONTINUED
+
+
+	characters of string: string[i]
+	ascii of a character: (int) string[i]
+	strlen(string)
+		must #include <string.h>
+
+		
+	int main(void) --- the void represents that this takes no input_iterator
+	
+	int main(int argc, string argv[])
+		int is total number of letters the human typed upon execution
+		string argv[] is an array of what the human typed execution
+		argv[0] is the program name
+		
+	Segmentation fault means we touched memory that is not ours to use, change, or view
+	
+**Functions**
+
+	type functionName(ptype1 para1, ptype 2 para2)
+	ex: double mult_two_reals(double x, double y);
