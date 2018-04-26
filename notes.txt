@@ -102,6 +102,11 @@ Command Line (Linux/Mac only):
 WEEK 1 CONTINUED
 
 
+
+Debugging
+
+	help50
+
 	characters of string: string[i]
 	ascii of a character: (int) string[i]
 	strlen(string)
@@ -121,3 +126,48 @@ WEEK 1 CONTINUED
 
 	type functionName(ptype1 para1, ptype 2 para2)
 	ex: double mult_two_reals(double x, double y);
+	
+	
+	
+--------WEEK 2--------
+
+---Lecture---
+
+a string is a sequence of characters. we can make an array of characters by doing such:
+	
+	we need to make sure that we have n + 1 characters, since we need to have a \0 at the end
+	
+	ex:
+		char initials[4];
+
+		initials[0] = 'M';
+		initials[1] = 'N';
+		initials[2] = 'L';
+		initials[3] = '\0';
+
+
+the worst case scenario of an algorithim is called the Big O. 
+when we talk about the complexity of an algorithim, we are usually talking about the Big O.
+the best case scenario is called the big omega
+
+Selection sort:
+	Repeat until no unsorted elements remain
+		Search through the unsorted data to find the smallest value_comp
+		Swap the smallest value with the first element of the unsorted part
+	Best case and worst case scenarios are the same, since no matter the case we need to go through the entire dataset
+	
+	
+Bubble Sort
+	The higher valued elements go generally towards the right and lower value elements towards the left	
+	
+	Set swap counter to a non zero value
+	Repeat until the swap counter is at 0:
+		Reset swap counter to 0
+			Look at each adjacent pair	If the two adjacent elements are not in order, swap them and add one to the swap counter
+	
+	
+	
+	
+	
+	
+	
