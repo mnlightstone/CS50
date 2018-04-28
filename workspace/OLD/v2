@@ -1,0 +1,14 @@
+
+#include <cs50.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
+int main(int argc, string argv[]) // need to add arguments here which accept an int, k)
+{
+    if (argc != 2)
+    {
+        printf("Uh oh. Please try again...\n");
+        return 1;
+    }
