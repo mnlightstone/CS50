@@ -1,0 +1,126 @@
+malloc = memory allocation
+
+all strings need to have the NUL character at the end (\0). This takes up an extra byte.
+
+a string is a char *. 
+
+A Char* is an address to a character.
+
+in order to print this string we need to loop through all of the characters in this. 
+
+    for (int i = 0), n = strlen(s); i < n; i++)
+    
+    note that we go through this string through the last character in order to capture the NUL (\0) value.
+    
+    
+------- Meanings of Stars* ------- 
+
+
+
+When we pass data between functions by value, we are only passing a COPY of that data. When we pass a variable to a function we are passing a COPY of the data to the function. In order to actually change values amongst functions we need to learn about pointers.
+
+
+When declaring a variable, * is part of the data type. It indicates that we are pointing to this kind of data type.
+    ex: \\ char *s = malloc(5) \\ means 'declare a pointer to a string of 5 (bytes of) characters'
+
+if we want to declare multiple variables, we should do something like this: 
+int* x, *y, *z
+
+
+when not declaring a variable, * is known as a deference operatior. It means 'go to this address'
+    *pk = 35
+    this means that we go to the address of pk and change that value to 35
+    
+int m;
+m = 4;
+pk = &m;
+this means that pk now points to the same value that is in m (4)
+    
+    
+Pointers should be set to null if we don't set them to something meaningful immediately. This is to block off a section of our memory in preparation. If we don't do this, the pointer will go to any random memory it can find, wether it is full or not. If we later dereference this pointer, we could be messing with memory that it is actually in use somewhere else. IF we try to dereference a pointer set to NULL we will get a segmentation fault instead which is much preferable to the possible consequences of messing with random memory.
+
+
+
+
+------- scanf ==> get input from the user ------- 
+    int x
+    scanf("%i",&x);
+
+    "%i" ==> takes format string (what kind of data is this)
+    &x ==> put the user input in the the address of x 
+    
+
+    & ==> get me the address of something
+    * ==> go to the address of something
+    
+malloc uses memory from the heap
+the stack is a region of memory which is used when we call a function
+
+
+------- Files ------- 
+When working with files, we will most likely be referencing them via their pointers
+
+File functions live in stdio.h
+
+fopen()
+    opens a file and returns a file pointer to it.
+    need to check the return value and confirm that it is not NULL
+    FILE* ptr1 = fopen(<filename>,<operation>)
+    FILE* ptr1 = fopen("file1.txt","r")
+        r means read the file
+        can also pass "w" for write (overwrite), "a" for append (add from the bottom),
+    
+fcose()
+    fclose(<file pointer);
+    fclose(ptr1);
+fgetc()
+    reads and returns the next character from the file pointed to
+    stands for 'file, get character'
+    The operation of the pointer passed in must be 'r' for read
+    char ch = fgetc(<file pointer>);
+    char ch = fgetc(ptr);
+    
+    Now that we know how to get one character, we can loop over every character and read the entire file.
+    char ch;
+    while((ch = fgetc(ptr)) != EOF)
+        printf("%c", ch);
+
+fputc()
+    Writes or appends a single character in a file
+    The file must have been opened for writing or appending
+    fputc('character',<file pointer>)
+    fputc('A',ptr3)
+    
+    Now that we can read characters from and write characters to files, we can copy entire files with a loop.
+    char ch;
+    while((ch = fgetc(ptr)) != EOF)
+        fputc(ch,ptr2);
+fread()
+    This reads the quantity of size from the file we are pointing to and stores them in memory in a buffer (an array)
+    The file pointer must be opened as 'read'
+    fread(<buffer address>,<size>,<qty>,<file pointer>)
+        int arr[10];
+        fread(arr, sizeof(int), 10, ptr);
+    
+fwrite()
+    Writes to the file with the same concept as fread
+    char c;
+    fread(&c, sizeof(int), 10, ptr);
+
+If we want to read AND write a file we must have two file pointers, one with 'r' passed and one with 'w' passed
+
+
+Now that we know how to get one character, we can loop over every character and read the entire file.
+    char ch;
+    while((ch = fgetc(ptr)) != EOF)
+        printf("%c", ch);
+
+
+
+
+
+
+
+
+
+
