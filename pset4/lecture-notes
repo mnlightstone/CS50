@@ -56,6 +56,7 @@ Pointers should be set to null if we don't set them to something meaningful imme
 malloc uses memory from the heap
 the stack is a region of memory which is used when we call a function
 
+### We use malloc when we need dynamic (aka unknown) memory size
 
 ------- Files ------- 
 When working with files, we will most likely be referencing them via their pointers
@@ -114,6 +115,29 @@ Now that we know how to get one character, we can loop over every character and 
     char ch;
     while((ch = fgetc(ptr)) != EOF)
         printf("%c", ch);
+        
+        
+        
+        
+##Whodunit 
+
+- BMPs are 24 bits
+- 1 byte is 8 bits
+- 8 bits each are used to signify each color (red, blue, and green) (8*3 = 24)
+- BMPS store color information backwards, as BGR.
+- 0xff means 100% of this color (0xff = 255 in decimal)
+- 0x00 means 0% of this color
+- metadata of the BMP is stored in the header of the file
+- the header is comprised of the following:
+    -bitmapfileheader (14 bytes)
+    -bitmapinofheader (40 bytes
+    
+- 'To be clear, recall that a hexadecimal digit represents 4 bits. Accordingly, ffffff in hexadecimal actually signifies 111111111111111111111111 in binary.' 
+
+-to print an error message:
+    fprintf(stderr, "ERROR MESSAGE\n");
+-to print a standard message:
+    fprintf(stdout, "MESSAGE\n");
 
 
 

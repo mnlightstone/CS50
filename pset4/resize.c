@@ -1,5 +1,3 @@
-// Copies a BMP file
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -7,7 +5,6 @@
 
 int main(int argc, char *argv[])
 {
-    // ensure proper usage
     if (argc != 4)
     {
         fprintf(stderr, "Usage: resizeRatio infile outfile\n");
@@ -65,7 +62,6 @@ int main(int argc, char *argv[])
     //-----DECLARE VARIABLES FOR OLD & NEW DIMENSIONS
     int oldHeight = bi.biHeight;
     int oldWidth = bi.biWidth;
-   // int oldSize = ((sizeof(RGBTRIPLE) * oldWidth) + oldPadding) * abs(oldHeight);
 
 
     //-----MAKE CHANGES FOR NEW DIMENSIONS
@@ -80,8 +76,8 @@ int main(int argc, char *argv[])
     RGBTRIPLE *bufferRow = malloc(sizeof(RGBTRIPLE) * (bi.biWidth));
 
     //-----MAKE NEW FILE SIZES & PADDING
-    bi.biSizeImage = abs(bi.biHeight) * ((bi.biWidth * sizeof (RGBTRIPLE)) + newPadding);
-    bf.bfSize = bi.biSizeImage + sizeof (BITMAPFILEHEADER) + sizeof (BITMAPINFOHEADER);
+    bi.biSizeImage = abs(bi.biHeight) * ((bi.biWidth * sizeof(RGBTRIPLE)) + newPadding);
+    bf.bfSize = bi.biSizeImage + sizeof(BITMAPFILEHEADER) + sizeof(BITMAPINFOHEADER);
 
     // write outfile's BITMAPFILEHEADER
     fwrite(&bf, sizeof(BITMAPFILEHEADER), 1, outptr);
@@ -100,7 +96,7 @@ int main(int argc, char *argv[])
             // temporary storage
             RGBTRIPLE triple;
 
-            // read RGB triple from infile
+            // read RGB triple from infile 
             fread(&triple, sizeof(RGBTRIPLE), 1, inptr);
 
 
@@ -111,8 +107,6 @@ int main(int argc, char *argv[])
                 number++;
                 //this puts the current triple (AKA pixel) in the proper memory location
             }
-                // // write RGB triple to outfile
-                // fwrite(&triple, sizeof(RGBTRIPLE), 1, outptr);
         }
 
         // skip over padding, if any
@@ -121,13 +115,13 @@ int main(int argc, char *argv[])
         for (int m = 0; m < resizeRatio; m++)
         {
 
-                fwrite((bufferRow), sizeof(RGBTRIPLE), bi.biWidth, outptr);
+            fwrite((bufferRow), sizeof(RGBTRIPLE), bi.biWidth, outptr);
 
             for (int n = 0; n < newPadding; n++)
-        {
-            // Add padding back
-            fputc(0x00, outptr);
-        }
+            {
+                // Add padding back
+                fputc(0x00, outptr);
+            }
         }
 
 
