@@ -1,3 +1,3 @@
 # CS50
 
-### In this repository I am recording my assignments, notes, and other files related to Harvard EDX's CS50 class.
+#### Assignments, notes, and other files related to Harvard EDX's self-paced CS50 class.
