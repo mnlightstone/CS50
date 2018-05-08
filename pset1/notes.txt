@@ -1,0 +1,173 @@
+/*Lecture Week 1*/
+
+when naming files, always use lowercase - no spaces
+
+IDE - integrated devloper environment 
+
+compiling means converting code into machine code
+source code -> compiler -> machine code
+
+	$clang FILE-NAME
+	clang <- clanguage
+
+when we run a compiler is output in an 'a.out' file
+
+to run code in cs50's IDE:
+	./a.out
+
+	. 		<- look in my current directory
+	/ 		<- separator 
+	a.out   <- compiled file name
+	
+to name a file in cs50's IDE:
+	clang -o hello hello.c
+	
+	clang   <- compile (clanguage)
+	-o 	  	<- stands to output
+	hello	<- file name we want
+	hello.c <- file we want to compile
+	
+	
+	
+command line commands:
+	**ls** - list all the files in this directory. 
+			/* programs are green with starts (executable)
+				text files are white 
+				folders are blue with a trailing slash */
+				
+	**mkdir** - make directory
+	**rmdir** - remove directory
+	**make**  - another way to compile a program. 'make FILENAME' 
+	
+with c you must declare what kind of variable you are creating
+
+library: a collection of functions that know how to do specific things
+	to include a library: #include <LIBRARY-NAME>
+	
+stdio.h: Input and Output operations can also be performed in C++ using the C Standard Input and Output Library (cstdio, known as stdio.h in the C language.
+	reference: http://www.cplusplus.com/reference/cstdio/
+	
+	
+floats usually use 32 bits. doubles use 64 bits
+
+single quoates are meant for single characters
+double quotes are meant for multiple characters
+
+
+
+sometimes we might run into a case where a function needs to be called before it is declared (chronologically in the code). we can copy the first line of the function and paste it in the top of the code, rather than moving the entire function which could get messy in huge projects. This is called a prototype.
+
+        EXAMPLE: 
+
+        #include <cs50.h>
+        #include <stdio.h>
+
+        int square (int n) //this is the prototype.
+        int main(void)
+        {
+            int x = get_int("x: ");
+            printf("%i\n", square(x));
+        }
+
+        int square (int n) //this is where the prototype is made
+        {
+            return n *n;
+        }
+        
+        
+    
+https://ide.cs50.io/
+
+
+
+Command Line (Linux/Mac only):
+	ls: list of all files in directory
+	cp: copy. takes source (file) and destination (file)
+		$ cp hello.txt hi.txt
+		//makes copy of 'hello' and calls it 'hi'
+
+		$cp -r folder1 folder2
+		//makes copy of folder1 and calls it folder2
+
+		$ rm <file>
+		//removes file
+
+		$rm -r folder1
+		//removes folder1
+
+		$m file1 file2
+		//renames file1 to file2
+
+
+WEEK 1 CONTINUED
+
+
+
+Debugging
+
+	help50
+
+	characters of string: string[i]
+	ascii of a character: (int) string[i]
+	strlen(string)
+		must #include <string.h>
+
+		
+	int main(void) --- the void represents that this takes no input_iterator
+	
+	int main(int argc, string argv[])
+		int is total number of letters the human typed upon execution
+		string argv[] is an array of what the human typed execution
+		argv[0] is the program name
+		
+	Segmentation fault means we touched memory that is not ours to use, change, or view
+	
+**Functions**
+
+	type functionName(ptype1 para1, ptype 2 para2)
+	ex: double mult_two_reals(double x, double y);
+	
+	
+	
+--------WEEK 2--------
+
+---Lecture---
+
+a string is a sequence of characters. we can make an array of characters by doing such:
+	
+	we need to make sure that we have n + 1 characters, since we need to have a \0 at the end
+	
+	ex:
+		char initials[4];
+
+		initials[0] = 'M';
+		initials[1] = 'N';
+		initials[2] = 'L';
+		initials[3] = '\0';
+
+
+the worst case scenario of an algorithim is called the Big O. 
+when we talk about the complexity of an algorithim, we are usually talking about the Big O.
+the best case scenario is called the big omega
+
+Selection sort:
+	Repeat until no unsorted elements remain
+		Search through the unsorted data to find the smallest value_comp
+		Swap the smallest value with the first element of the unsorted part
+	Best case and worst case scenarios are the same, since no matter the case we need to go through the entire dataset
+	
+	
+Bubble Sort
+	The higher valued elements go generally towards the right and lower value elements towards the left	
+	
+	Set swap counter to a non zero value
+	Repeat until the swap counter is at 0:
+		Reset swap counter to 0
+			Look at each adjacent pair	If the two adjacent elements are not in order, swap them and add one to the swap counter
+	
+	
+	
+	
+	
+	
+	
